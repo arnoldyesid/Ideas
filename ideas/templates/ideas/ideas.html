@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Ideas publicadas</h2>
+{% for idea in ideas %}
+<h3>Nombre: {{idea.owner}} </h3>
+<h3>Título: {{idea.name}} </h3>
+<h3>Descripción: {{idea.description}} </h3>
+<hr>
+{% empty %}
+<h2>No hay ideas aún</h2>
+{% endfor %}
+
+
+{% endblock %}

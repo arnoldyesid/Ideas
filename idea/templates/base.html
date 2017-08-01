@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+	<title> {% block title %}  {% endblock %}  </title>
+</head>
+
+<body>
+<nav>
+	<a href="{% url 'ideas' %}">Home</a>
+{% if user.is_authenticated %}
+<a href="#">Mis ideas</a>
+	<a href="#">Salir</a>
+	<a href="{% url 'crear_idea' %}">Crear idea</a>
+	{% else %}
+	<a href="#">Entrar</a>
+{% endif %}
+</nav>
+<hr>
+ {% block content %}
+
+ {% endblock %}
+
+<footer>
+
+	<small>Derechos reservados</small>
+</footer>
+</body>
+</html>
